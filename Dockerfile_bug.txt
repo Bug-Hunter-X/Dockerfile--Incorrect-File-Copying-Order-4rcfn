@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y curl
+
+# Incorrect use of COPY, overwriting the existing file.
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
+
+COPY . . 
+
+CMD ["node", "./server.js"]
