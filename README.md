@@ -1,0 +1,1 @@
+This repository demonstrates a common issue in Dockerfiles. The problem lies in the order of the COPY instructions. Incorrect placement can lead to overwriting files and unexpected behavior during build. The solution showcases the correct approach.
