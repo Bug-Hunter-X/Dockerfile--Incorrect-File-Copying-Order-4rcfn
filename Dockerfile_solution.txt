@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y curl
+
+# Correct way to copy files: copy the entire source directory first, before copying specific files.
+COPY . .
+
+# No need to copy package.json and package-lock.json separately, this will now work correctly.
+RUN npm install
+
+CMD ["node", "./server.js"]
